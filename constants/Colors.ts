@@ -7,6 +7,7 @@ export default {
     background: '#fff',
     tint: tintColorLight,
     tabIconDefault: '#ccc',
+<<<<<<< Updated upstream
     tabIconSelected: tintColorLight,
   },
   dark: {
@@ -16,4 +17,8 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+=======
+    tabIconSelected: '#D62528',
+    gray:'#808080',
+>>>>>>> Stashed changes
 };

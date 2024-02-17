@@ -1,14 +1,32 @@
+<<<<<<< Updated upstream
 import { StyleSheet } from 'react-native';
+=======
+import { View } from 'react-native';
+import React from 'react';
+import { Link} from 'expo-router';
+import HeaderPage from '@/components/HeaderPage';
+>>>>>>> Stashed changes
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
 
 export default function TabOneScreen() {
   return (
+<<<<<<< Updated upstream
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="app/(tabs)/index.tsx" />
+=======
+    <View>
+      <div>
+        <HeaderPage/>
+      </div>
+      <Link href={'/(modals)/login'}>login</Link>
+
+
+
+>>>>>>> Stashed changes
     </View>
   );
 }

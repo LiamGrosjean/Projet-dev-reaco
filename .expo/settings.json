@@ -1,0 +1,21 @@
+{
+<<<<<<< Updated upstream
+  "hostType": "lan",
+  "lanType": "ip",
+  "dev": true,
+  "minify": false,
+  "urlRandomness": null,
+  "https": false,
+  "scheme": null,
+  "devClient": false
+=======
+  "scheme": null,
+  "hostType": "lan",
+  "lanType": "ip",
+  "devClient": false,
+  "dev": true,
+  "minify": false,
+  "urlRandomness": null,
+  "https": false
+>>>>>>> Stashed changes
+}
