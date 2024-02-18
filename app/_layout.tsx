@@ -23,6 +23,7 @@ export default function RootLayout() {
     RedHatText: require("../assets/fonts/Red-Hat-Text.ttf"),
   });
 
+
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
@@ -50,6 +51,12 @@ function RootLayoutNav() {
         name="(modals)/login" 
         options={{ 
           title: 'Connexion ou Inscription',
+          headerTitleStyle: {
+            fontSize: 14,
+            fontFamily: 'Red Hat Text',
+            fontWeight: '500',
+            color: 'colors.primary'
+          },
           presentation: 'modal',
           headerLeft: () => (
             <TouchableOpacity onPress={() => router.back()}>
