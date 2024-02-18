@@ -1,12 +1,21 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { Stack } from 'expo-router';
+import Search from '../components/Search';
+import Head from '../components/Head';
 
-const Page = () => {
+
+const jobs = () => {
   return (
     <View>
-      <Text>Jobs</Text>
+          <div>
+      <div>
+        <Head/>
+        <Search />
+      </div>
+    </div>
     </View>
-  )
-}
+  );
+};
 
-export default Page
+export default jobs
