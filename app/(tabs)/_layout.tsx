@@ -7,8 +7,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 const Layout = () => {
   return (
     <Tabs screenOptions={{
-      tabBarActiveTintColor: Colors.accent,
       tabBarInactiveTintColor: Colors.primary,
+      tabBarActiveTintColor: Colors.accent,
       tabBarLabelStyle: {
         fontFamily: "Red-Hat-Text",
         fontSize: 12,
