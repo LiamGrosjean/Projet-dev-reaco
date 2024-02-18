@@ -4,15 +4,6 @@ import Tile from './tile';
 import Colors from '@/constants/Colors';
 
 const quickaccess = () => {
-    const styles = {
-        tilesWrapper: {
-            flexDirection: 'row', // Replace 'row' with the correct value
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            gap: 12,
-            marginTop: 20,
-        },
-    };
 
     return (
         <View style={styles.tilesWrapper}>
@@ -23,6 +14,16 @@ const quickaccess = () => {
             <Tile iconName='comment-dots' text='Messagerie' bgColor='#BE0A96' lien='messagerie'  />
         </View>
     );
+};
+
+const styles = {
+  tilesWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 16,
+    marginTop: 19,
+  },
 };
 
 export default quickaccess
