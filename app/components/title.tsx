@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-const Title = ({ titre }) => {
+const Title = ({ titre, displayLink }: { titre: string, displayLink: boolean }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{titre}</Text>
-                <Text style={styles.titleLink} onPress={() => {}}>Voir tout</Text>
-            </View>
+            {displayLink && <Text style={styles.titleLink} onPress={() => {}}>Voir tout</Text>}
+        </View>
     )
 }
 
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Red Hat Text',
         fontWeight: '500',
         lineHeight: 17.12,
-        wordWrap: 'break-word'
     },
     titleLink: {
         color: '#D62528',
@@ -31,7 +30,6 @@ const styles = StyleSheet.create({
         fontFamily: 'Red Hat Text',
         fontWeight: '400',
         lineHeight: 10.70,
-        wordWrap: 'break-word'
     }
 })
 
