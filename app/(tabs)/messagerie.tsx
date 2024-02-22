@@ -4,7 +4,7 @@ import React from 'react'
 const messagerie = () => {
   return (
     <View>
-      <Text>messagerie</Text>
+      <Text style={{ textAlign: 'center' }}>Messagerie</Text>
     </View>
   )
 }

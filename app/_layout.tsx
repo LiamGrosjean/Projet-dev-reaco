@@ -5,6 +5,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
+
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary,
@@ -64,6 +65,28 @@ function RootLayoutNav() {
             </TouchableOpacity>
           )
           }}/>
+        <Stack.Screen 
+        name="(modals)/menu" 
+        options={{ 
+          title: 'Menu',
+          headerTitleStyle: {
+            fontSize: 16,
+            fontFamily: 'Red Hat Text',
+            fontWeight: '600',
+            color: 'colors.primary'
+          },
+          presentation: 'modal',
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => router.back()}>
+              <FontAwesome name="angle-left" size={24} /> 
+            </TouchableOpacity>
+          ),
+          animation: 'slide_from_left',
+          contentStyle: {
+            backgroundColor: '#ffffff',
+            padding: 16,
+          },
+        }}/>
       </Stack>
   );
 }

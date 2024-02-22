@@ -6,9 +6,10 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const Layout = () => {
   return (
-    <Tabs screenOptions={{
-      tabBarInactiveTintColor: Colors.primary,
-      tabBarActiveTintColor: Colors.accent,
+    <Tabs 
+    screenOptions={{
+      tabBarInactiveTintColor: Colors.light.primary,
+      tabBarActiveTintColor: Colors.light.accent,
       tabBarLabelStyle: {
         fontFamily: "Red-Hat-Text",
         fontSize: 12,
@@ -16,14 +17,17 @@ const Layout = () => {
         textAlign: "center",
         fontWeight: "400",
       },
-      
+      tabBarStyle: {
+        height: 90,
+        alignItems: 'center',
+      }
     }}>
       <Tabs.Screen 
-        name='index' 
+        name='index'
         options={{
           tabBarLabel: 'Accueil',
           tabBarIcon : ({ color, size }) => {
-            return <FontAwesome name="home" size={size} color={color} />
+            return <FontAwesome name="home" size={size} color={color}/>
           }
         }}
         />

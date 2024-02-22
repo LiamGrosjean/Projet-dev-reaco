@@ -15,21 +15,18 @@ const styles = StyleSheet.create({
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignSelf: 'center',
         alignItems: 'center',
     },
     title: {
         fontSize: 16,
         fontFamily: 'Red Hat Text',
-        fontWeight: '500',
-        lineHeight: 17.12,
+        fontWeight: '600',
     },
     titleLink: {
         color: '#D62528',
-        fontSize: 10,
+        fontSize: 12,
         fontFamily: 'Red Hat Text',
         fontWeight: '400',
-        lineHeight: 10.70,
     }
 })
 

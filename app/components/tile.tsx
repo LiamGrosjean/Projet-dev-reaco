@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import Colors from '@/constants/Colors';
 import { useRouter } from 'expo-router';
+import Colors from '@/constants/Colors';
 
 const tile = ({ iconName, text, bgColor, lien}: { iconName: string, text: string, bgColor: string, lien: StaticRoutes | RelativePathString | `http${string}`}) => {
 
@@ -11,7 +11,7 @@ const tile = ({ iconName, text, bgColor, lien}: { iconName: string, text: string
   return (
     <TouchableOpacity onPress={() => {router.push(lien)}}>
       <View style={styles.container}>
-          <View style={[styles.iconContainer, { backgroundColor: bgColor }]}>
+          <View style={[styles.iconContainer, { backgroundColor: bgColor, background: 'linear-gradient(122deg, #D62528 5%, #141332 100%)' }]}>
             <FontAwesome5 name={iconName} size={16} color="white" />
           </View>
         <Text style={styles.text}>{text}</Text>
@@ -26,24 +26,19 @@ const styles = StyleSheet.create({
     gap: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: Colors.light.background,
     paddingTop: 22,
     paddingBottom: 22,
-    minWidth: 138,
-    maxHeight: 118,
-    width: 155,
-    flexBasis: '100%',
-    flexGrow: 1,
+    borderRadius: 8,
   },
   iconContainer: {
-    borderRadius: 50,
+    borderRadius: 12,
     padding: 16,
   },
   text: {
-    fontSize: 12,
+    fontSize: 16,
     fontFamily: 'Red Hat Text',
     fontWeight: '600',
-    lineHeight: 11.93,
   },
 });
 
