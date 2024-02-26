@@ -2,15 +2,15 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import Header from '@/app/components/header'
 import { Stack } from 'expo-router'
+import Search from '../components/Search'
 
 const page = () => {
   return (
     <View>
-      <Text style={{ textAlign: 'center' }}>jobss</Text>
       <View style={styles.main}>
       <Stack.Screen
         options={{
-          header: () => <Header />,
+          header: () => <Search />,
         }}
         />
       </View>
