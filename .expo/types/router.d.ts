@@ -7,7 +7,7 @@ declare module "expo-router" {
   export * from 'expo-router/build';
 
   // prettier-ignore
-  type StaticRoutes = `/` | `/(modals)/login` | `/login` | `/(modals)/menu` | `/menu` | `/(tabs)/_layout` | `/_layout` | `/(tabs)/` | `/(tabs)` | `/(tabs)/jobs` | `/jobs` | `/(tabs)/logements` | `/logements` | `/(tabs)/messagerie` | `/messagerie` | `/components/Head` | `/components/header` | `/components/quickaccess` | `/components/tile` | `/components/title` | `/components/Search` | `/components/categorie`;
+  type StaticRoutes = `/` | `/(modals)/login` | `/login` | `/(modals)/menu` | `/menu` | `/(tabs)/_layout` | `/_layout` | `/(tabs)/` | `/(tabs)` | `/(tabs)/jobs` | `/jobs` | `/(tabs)/logements` | `/logements` | `/(tabs)/messagerie` | `/messagerie` | `/components/header` | `/components/quickaccess` | `/components/tile` | `/components/title` | `/components/Search` | `/components/categorie` | `/components/cats` | `/components/jobCard`;
   // prettier-ignore
   type DynamicRoutes<T extends string> = `/listing/${SingleRoutePart<T>}`;
   // prettier-ignore
