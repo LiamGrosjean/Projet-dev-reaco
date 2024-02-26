@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
+import Colors from '@/constants/Colors'
 
 const Title = ({ titre, displayLink }: { titre: string, displayLink: boolean }) => {
     return (
@@ -21,6 +22,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'Red Hat Text',
         fontWeight: '600',
+        color: Colors.light.primary,
     },
     titleLink: {
         color: '#D62528',
