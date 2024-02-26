@@ -13,22 +13,21 @@ const header = () => {
     const router = useRouter();
     return (
         <View style={styles.container}>
-            <View style={styles.headerWrapper}>
-                <TouchableOpacity style={styles.navContainer} onPress={() => router.push('menu')}>
-                        <FontAwesome5 name="bars" size={16} color={Colors.light.primary} />
-                        <View style={styles.nameWrapper}>
-                                <Text style={styles.text}>Hello, </Text>
-                                <Text style={styles.name}> Elisa </Text>
+            <View style={styles.profilContainer}>
+                <TouchableOpacity style={styles.navContainer} onPress={() => router.push('')}>
+                    <View style={styles.imageWrapper}>
+                        <Image source={require('../../assets/images/userImage.jpeg')} style={styles.userImage} />
+                        <View style={styles.userImage} />
+                    </View>
+                    <View style={styles.divider} />
+                        <View>
+                            <Text style={styles.text}>Bienvenue,</Text>
+                            <Text style={styles.name}>Elisa</Text>
                         </View>
                 </TouchableOpacity>
             </View>
-            <View style={styles.profilContainer}>
-                <FontAwesome5 name="bell" size={16} color={Colors.light.primary} />
-                <View style={styles.divider} />
-                <View style={styles.imageWrapper}>
-                    <Image source={require('../../assets/images/userImage.jpeg')} style={styles.userImage} />
-                    <View style={styles.userImage} />
-                </View>
+            <View style={styles.headerWrapper}>
+                <FontAwesome5 name="bell" size={13} color={Colors.light.primary} />
             </View>
         </View>
     )
@@ -42,11 +41,17 @@ const styles = StyleSheet.create({
         paddingBottom: 17,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         backgroundColor: Colors.light.background,
     },
     headerWrapper: {
         alignItems: 'center',
+        justifyContent: 'center',
         flexDirection: 'row',
+        backgroundColor: '#F3F4FB',
+        borderRadius: 60,
+        width: 24,
+        height: 24,
     },
     navContainer: {
         flexDirection: 'row',
@@ -54,11 +59,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         gap: 13,
     },
-    nameWrapper: {
-        flexDirection: 'row',
-    },
     text: {
-        fontSize: 16,
+        fontSize: 12,
         fontFamily: 'Red Hat Text',
         fontWeight: '300',
         color: Colors.light.primary,
@@ -77,14 +79,14 @@ const styles = StyleSheet.create({
     divider: {
         width: 1,
         height: '100%',
-        backgroundColor: '#F0F2F5',
+        backgroundColor: '#F3F4FB',
     },
     imageWrapper: {
-        width: 32,
-        height: 32,
+        width: 36,
+        height: 36,
         objectFit: 'cover',
         overflow: 'hidden',
-        borderRadius: 5,
+        borderRadius: 60,
     },
     userImage: {
         width: '100%',

@@ -3,6 +3,7 @@ import React from 'react'
 import { Tabs } from 'expo-router'
 import Colors from '@/constants/Colors';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 const Layout = () => {
   return (
@@ -41,20 +42,11 @@ const Layout = () => {
         }}
         />
       <Tabs.Screen 
-        name='profil' 
-        options={{
-          tabBarLabel: 'Profil',
-          tabBarIcon : ({ color, size }) => {
-            return <FontAwesome name="user" size={size} color={color} />
-          }
-        }}
-        />
-      <Tabs.Screen 
         name='logements' 
         options={{
           tabBarLabel: 'Logements',
           tabBarIcon : ({ color, size }) => {
-            return <FontAwesome name="cog" size={size} color={color} />
+            return <FontAwesome5 name="building" size={size} color={color} />
           }
         }}
         />
