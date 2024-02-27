@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Title from './title';
@@ -24,7 +24,7 @@ const Search = () => {
 };
 
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     paddingLeft: 33,
     paddingRight: 33,
@@ -70,6 +70,6 @@ const styles = {
     backgroundColor: '#ccc',
     marginHorizontal: 10,
   },
-};
+});
 
 export default Search;

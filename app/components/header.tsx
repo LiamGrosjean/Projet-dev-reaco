@@ -61,13 +61,11 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 12,
-        fontFamily: 'Red Hat Text',
         fontWeight: '300',
         color: Colors.light.primary,
     },
     name: {
         fontSize: 16,
-        fontFamily: 'Red Hat Text',
         fontWeight: '600',
         color: Colors.light.primary,
     },

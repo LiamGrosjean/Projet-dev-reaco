@@ -54,7 +54,6 @@ function RootLayoutNav() {
           title: 'Connexion ou Inscription',
           headerTitleStyle: {
             fontSize: 14,
-            fontFamily: 'Red Hat Text',
             fontWeight: '500',
             color: 'colors.primary'
           },
@@ -71,7 +70,6 @@ function RootLayoutNav() {
           title: 'Menu',
           headerTitleStyle: {
             fontSize: 16,
-            fontFamily: 'Red Hat Text',
             fontWeight: '600',
             color: 'colors.primary'
           },

@@ -2,39 +2,33 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-const jobCard = () => {
+const jobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h' }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { maxWidth }]}>
       <View style={styles.subContainer}>
         <View style={styles.iconContainer}>
           <View style={styles.iconCircle} />
-          <View style={styles.smallIconContainer}>
-            <View style={styles.smallIcon} />
-            <View style={[styles.smallIcon, styles.smallIconOffset]} />
-          </View>
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.title}>UI/UX Designer</Text>
-          <Text style={styles.subtitle}>UFR Ingémédia</Text>
+          <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{company}</Text>
         </View>
         <FontAwesome5 name='bookmark' style={styles.bookmark} />
       </View>
-      <Text style={styles.description}>
-        Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit
-      </Text>
+      <Text style={styles.description}>{description}</Text>
       <View style={styles.divider} />
       <View style={styles.infoContainer}>
         <View style={styles.infoItem}>
             <FontAwesome5 name='map-marker-alt' style={styles.infoIcon} />
-            <Text style={styles.infoText}>La valette du var</Text>
+            <Text style={styles.infoText}>{emplacement}</Text>
         </View>
         <View style={styles.infoItem}>
             <FontAwesome5 name='briefcase' style={styles.infoIcon} />
-            <Text style={styles.infoText}>20H / Sem</Text>
+            <Text style={styles.infoText}>{hSemaine}</Text>
         </View>
         <View style={styles.infoItem}>
             <FontAwesome5 name='money-bill' style={styles.infoIcon} />
-            <Text style={styles.infoText}>€15/Hr</Text>
+            <Text style={styles.infoText}>{hSalaire}</Text>
         </View>
       </View>
     </View>
@@ -44,14 +38,12 @@ const jobCard = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginRight: 10,
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#EDEDED',
     gap: 10,
-    display: 'flex',
-    maxWidth: '80%',
-    minWidth: 226,
+    width: '100%', 
+    maxWidth: 226,
   },
   subContainer: {
     flexDirection: 'row',
@@ -72,31 +64,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#EDEDED',
   },
-  smallIconContainer: {
-    position: 'absolute',
-    left: 6,
-    top: 6,
-  },
-  smallIcon: {
-    width: 20,
-    height: 20,
-    position: 'absolute',
-    backgroundColor: '#8934AD',
-    borderRadius: 50,
-  },
-  smallIconOffset: {
-    left: 6,
-    top: 5,
-    width: 8,
-    height: 10,
-    backgroundColor: '#F2A809',
-  },
   textContainer: {
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
     gap: 3,
-    display: 'flex',
+    alignItems: 'flex-start',
   },
   title: {
     color: '#242C5D',
@@ -114,7 +84,6 @@ const styles = StyleSheet.create({
   description: {
     color: '#353558',
     fontSize: 12,
-    fontFamily: 'Red Hat Text',
     fontWeight: '300',
   },
   divider: {

@@ -12,7 +12,6 @@ const Layout = () => {
       tabBarInactiveTintColor: Colors.light.primary,
       tabBarActiveTintColor: Colors.light.accent,
       tabBarLabelStyle: {
-        fontFamily: "Red-Hat-Text",
         fontSize: 12,
         fontStyle: "normal",
         textAlign: "center",

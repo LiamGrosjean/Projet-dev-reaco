@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Red Hat Text',
     fontWeight: '600',
+    color: Colors.light.primary,
   },
 });
 

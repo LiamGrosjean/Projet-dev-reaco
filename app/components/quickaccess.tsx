@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import Tile from './tile';
 import Colors from '@/constants/Colors';
 
@@ -32,8 +32,6 @@ const quickaccess = () => {
 };
 
 
-
-import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
 tilesWrapper: {

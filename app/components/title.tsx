@@ -20,14 +20,12 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
-        fontFamily: 'Red Hat Text',
         fontWeight: '600',
         color: Colors.light.primary,
     },
     titleLink: {
         color: '#D62528',
         fontSize: 12,
-        fontFamily: 'Red Hat Text',
         fontWeight: '400',
     }
 })

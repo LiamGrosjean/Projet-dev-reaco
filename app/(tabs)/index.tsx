@@ -46,7 +46,7 @@ const Page = () => {
   )
 }
 
-const styles = {
+const styles = StyleSheet.create({
   main: {
     flex: 1,
     width: '100%',
@@ -68,5 +68,6 @@ const styles = {
   imageContainer: {
     overflow: 'visible',
   }
-}
+})
+
 export default Page;
