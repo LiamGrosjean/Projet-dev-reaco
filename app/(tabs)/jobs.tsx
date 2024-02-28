@@ -6,7 +6,6 @@ import Title from '@/app/components/title'
 import Colors from '@/constants/Colors'
 import Cats from '@/app/components/cats'
 import JobCard from '@/app/components/jobCard'
-import loadFonts from '@/constants/Font'
 
 const page = () => {
   return (
@@ -26,7 +25,15 @@ const page = () => {
               <Title titre='Pour vous' displayLink={true} />
               <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{overflow: 'visible'}}>
                 <View style={styles.suggestions_wrapper}>
-                <JobCard maxWidth={256}/>
+                <JobCard 
+                  maxWidth={256}
+                  title='UX / UI Designer' 
+                  company='Freelance' 
+                  description='Concevoir des wireframes, des maquettes et des prototypes interactifs'
+                  emplacement='Remote'
+                  hSemaine='35H/sem'
+                  hSalaire='€30/h'
+                />
                 <JobCard 
                   maxWidth={256} 
                   title='WebDesigner' 
@@ -40,6 +47,24 @@ const page = () => {
                 <JobCard maxWidth={256}/>
                 </View>
               </ScrollView>
+            </View>
+            <View>
+              <View style={{marginTop: 26}}>
+                <Title titre='Jobs récents' displayLink={true}/>
+              </View>
+              <View style={{paddingVertical: 26, gap: 10}}>
+                <JobCard 
+                title='Serveur' 
+                company='Le Bistrot' 
+                description='En tant que serveur, votre mission sera de fournir un service exceptionnel à nos clients dans notre restaurant haut de gamme.'
+                emplacement='Marseille'
+                hSemaine='35H/sem'
+                hSalaire='€15/h'
+                />
+                <JobCard />
+                <JobCard />
+                <JobCard />
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -59,7 +84,7 @@ const styles = StyleSheet.create({
   suggestions_wrapper: {
     flexDirection: 'row',
     gap: 10,
-  }
+  },
 })
 
 export default page

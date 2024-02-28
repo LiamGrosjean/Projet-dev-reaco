@@ -49,22 +49,6 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen 
-        name="(modals)/login" 
-        options={{ 
-          title: 'Connexion ou Inscription',
-          headerTitleStyle: {
-            fontSize: 14,
-            fontWeight: '500',
-            color: 'colors.primary'
-          },
-          presentation: 'modal',
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => router.back()}>
-              <FontAwesome name="angle-left" size={24} /> 
-            </TouchableOpacity>
-          )
-          }}/>
-        <Stack.Screen 
         name="(modals)/menu" 
         options={{ 
           title: 'Menu',
