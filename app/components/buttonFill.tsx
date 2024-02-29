@@ -3,7 +3,7 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import Colors from '@/constants/Colors'
 
-const button = (btnText: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined) => {
+const ButtonFill = (btnText: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined) => {
   return (
     <View>
         <TouchableOpacity style={styles.buttonWrapper}>
@@ -13,7 +13,7 @@ const button = (btnText: string | number | boolean | React.ReactElement<any, str
   )
 }
 
-export default button
+export default ButtonFill
 
 const styles = StyleSheet.create({
     buttonText: {

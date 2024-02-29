@@ -51,6 +51,23 @@ export default function RootLayout() {
     if (error) throw error;
   }, [error]);
 
+  const tokenCache = {
+    async getToken(key: string) {
+      try {
+        return SecureStore.getItemAsync(key);
+      } catch (err) {
+        return null;
+      }
+    },
+    async saveToken(key: string, value: string): Promise<void> {
+      try {
+        await SecureStore.setItemAsync(key, value);
+      } catch (err) {
+        return null;
+      }
+    }
+  };
+
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
@@ -75,6 +92,9 @@ function RootLayoutNav() {
   useEffect(() => {
     if (isLoaded && !isSignedIn) {
       router.push('/screens/login');
+    }
+    if (isLoaded && isSignedIn) {
+      router.push('/(tabs)/');
     }
   }, [isLoaded]);
 
