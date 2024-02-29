@@ -14,7 +14,7 @@ const header = () => {
     return (
         <View style={styles.container}>
             <View style={styles.profilContainer}>
-                <TouchableOpacity style={styles.navContainer} onPress={() => router.push('')}>
+                <TouchableOpacity style={styles.navContainer} onPress={() => router.push('/screens/login')}>
                     <View style={styles.imageWrapper}>
                         <Image source={require('../../assets/images/userImage.jpeg')} style={styles.userImage} />
                         <View style={styles.userImage} />
