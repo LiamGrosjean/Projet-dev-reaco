@@ -54,21 +54,25 @@ const Page = () => { // Name the component for better understanding
                 <Text style={styles.label}>mot de passe</Text>
                 <TextInput autoCapitalize='none' placeholder='***************' style={styles.email} />
             </View>
-            <View>
-            </View>
                 <TouchableOpacity style={styles.buttonWrapper}>
                     <Text style={styles.buttonText}>Valider</Text>
                 </TouchableOpacity>
-            </View>
-            <View>
-              <TouchableOpacity style={styles.btnWrapperOutline} onPress={() => onSelectAuth(Strategy.Apple)}>
-                <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 20}}>
-                  <FontAwesome5 name="google" size={24} color={Colors.light.primary} />
-                  <Text style={{fontSize: 16, fontWeight: 600, color: Colors.light.primary}}>Connexion avec Google</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
         </View>
+        <View style={{marginTop: 41, gap:10}}>
+              <TouchableOpacity style={styles.btnWrapperOutline} onPress={() => onSelectAuth(Strategy.Google)}>
+                  <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 20}}>
+                    <FontAwesome5 name="google" size={22} color={Colors.light.primary} />
+                    <Text style={{fontSize: 16, fontWeight: 600, color: Colors.light.primary}}>Connexion avec Google</Text>
+                  </View>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.btnWrapperOutline} onPress={() => onSelectAuth(Strategy.Apple)}>
+                  <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 20}}>
+                    <FontAwesome5 name="apple" size={22} color={Colors.light.primary} />
+                    <Text style={{fontSize: 16, fontWeight: 600, color: Colors.light.primary}}>Connexion avec Apple</Text>
+                  </View>
+                </TouchableOpacity>
+        </View>
+    </View>
   );
 };
 export default Page
@@ -109,7 +113,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 'auto',
     alignItems: 'center',
     borderRadius: 5,
-    marginTop: 41,
     borderColor: Colors.light.primary,
     borderWidth: 1,
   },
