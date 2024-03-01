@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors'
 import Cats from '@/app/components/cats'
 import JobCard from '@/app/components/jobCard'
 
-const page = () => {
+const jobs = () => {
   return (
     <View>
       <Stack.Screen
@@ -87,4 +87,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default page
+export default jobs

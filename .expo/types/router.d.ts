@@ -7,7 +7,7 @@ declare module "expo-router" {
   export * from 'expo-router/build';
 
   // prettier-ignore
-  type StaticRoutes = `/` | `/(tabs)/_layout` | `/_layout` | `/(tabs)/` | `/(tabs)` | `/(tabs)/jobs` | `/jobs` | `/(tabs)/logements` | `/logements` | `/(tabs)/messagerie` | `/messagerie` | `/components/Search` | `/components/categorie` | `/components/cats` | `/components/header` | `/components/jobCard` | `/components/quickaccess` | `/components/tile` | `/components/title` | `/screens/login` | `/hooks/useWarmUpBrowser` | `/screens/profile` | `/components/buttonFill` | `/screens/mesCandidatures` | `/(modals)/jobApplied` | `/jobApplied`;
+  type StaticRoutes = `/` | `/(modals)/jobApplied` | `/jobApplied` | `/(tabs)/` | `/(tabs)` | `/(tabs)/jobs` | `/jobs` | `/(tabs)/logements` | `/logements` | `/(tabs)/messagerie` | `/messagerie` | `/(tabs)/_layout` | `/_layout` | `/components/buttonFill` | `/components/categorie` | `/components/cats` | `/components/header` | `/components/jobCard` | `/components/quickaccess` | `/components/Search` | `/components/tile` | `/components/title` | `/hooks/useWarmUpBrowser` | `/screens/login` | `/screens/mesCandidatures` | `/screens/profile`;
   // prettier-ignore
   type DynamicRoutes<T extends string> = `/listing/${SingleRoutePart<T>}`;
   // prettier-ignore
