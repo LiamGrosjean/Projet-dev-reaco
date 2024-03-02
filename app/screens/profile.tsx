@@ -7,11 +7,13 @@ import Colors from '@/constants/Colors';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Stack } from 'expo-router';
 import Header from '@/app/components/header';
+import Layout from '../(tabs)/_layout'
 
 const Profile = () => {
     const {signOut, isSignedIn} = useAuth()
   return (
     <View style={styles.main}>
+      <Layout />
       <View style={{paddingHorizontal: 33}}>
         <Stack.Screen
           options={{

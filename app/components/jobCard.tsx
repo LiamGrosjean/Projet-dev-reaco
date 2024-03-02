@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
 import { faBookmark as farBookmark } from '@fortawesome/free-regular-svg-icons/faBookmark';
 
-const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h' }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string }) => {
+const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h', jobLien }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string, jobLien?: string }) => {
   const router = useRouter();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -16,7 +16,7 @@ const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', de
   };
 
   return (
-    <TouchableOpacity onPress={() => {router.push('listing/133')}}>
+    <TouchableOpacity onPress={() => {router.push(jobLien as RelativePathString || '')}}>
       <View style={[styles.container, { maxWidth }]}>
         <View style={styles.subContainer}>
           <View style={styles.brandContainer}>
@@ -41,11 +41,11 @@ const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', de
           </View>
           <View style={styles.infoItem}>
               <FontAwesome5 name='briefcase' style={styles.infoIcon} />
-              <Text style={styles.infoText}>{hSemaine}</Text>
+              <Text style={styles.infoText}>{hSemaine} h/sem </Text>
           </View>
           <View style={styles.infoItem}>
               <FontAwesome5 name='money-bill' style={styles.infoIcon} />
-              <Text style={styles.infoText}>{hSalaire}</Text>
+              <Text style={styles.infoText}> {hSalaire}/h €</Text>
           </View>
         </View>
       </View>
@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
     gap: 10,
     width: '100%', 
     maxWidth: 226,
+    marginTop: 10,
   },
   subContainer: {
     flexDirection: 'row',
