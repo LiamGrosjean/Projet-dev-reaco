@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRouter } from 'expo-router';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
+import { faBookmark as farBookmark } from '@fortawesome/free-regular-svg-icons/faBookmark';
 
-const jobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h' }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string }) => {
+const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h' }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string }) => {
   const router = useRouter();
+  const [isBookmarked, setIsBookmarked] = useState(false);
+
+  const handleBookmarkToggle = () => {
+    setIsBookmarked(!isBookmarked);
+  };
+
   return (
     <TouchableOpacity onPress={() => {router.push('listing/133')}}>
       <View style={[styles.container, { maxWidth }]}>
@@ -19,9 +28,9 @@ const jobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', de
               <Text style={styles.subtitle}>{company}</Text>
             </View>
           </View>
-          <View>
-            <FontAwesome5 name='bookmark' style={styles.bookmark} />
-          </View>
+          <TouchableOpacity onPress={handleBookmarkToggle}>
+            <FontAwesomeIcon icon={isBookmarked ? faBookmark : farBookmark} style={styles.bookmark} />
+          </TouchableOpacity>
         </View>
         <Text style={styles.description}>{description}</Text>
         <View style={styles.divider} />
@@ -91,6 +100,7 @@ const styles = StyleSheet.create({
   },
   bookmark: {
     color: '#D62528',
+    fontSize: 12,
   },
   description: {
     color: '#353558',
@@ -127,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default jobCard;
+export default JobCard;

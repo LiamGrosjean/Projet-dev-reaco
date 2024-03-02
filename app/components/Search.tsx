@@ -4,10 +4,10 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Colors from '@/constants/Colors';
 
 
-const Search = () => {
+const Search = ({ titre = 'Trouver un Job' }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Trouver un job</Text>
+      <Text style={styles.title}>{titre}</Text>
       <View style={styles.searchContainer}>
         <Icon name="search" size={24} style={styles.icon} />
         <TextInput
@@ -25,9 +25,7 @@ const Search = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 33,
-    paddingRight: 33,
-    paddingTop: '15%',
+    paddingHorizontal: 33,
     paddingBottom: 17,
     backgroundColor: '#fff',
   },

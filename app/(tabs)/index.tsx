@@ -10,8 +10,7 @@ import loadFonts from '@/constants/Font';
 import { useEffect } from 'react';
 
 
-
-const Page = () => {
+const HomePage = () => {
   const chargementFont = () => {
     useEffect(() => {
       loadFonts();
@@ -46,6 +45,8 @@ const Page = () => {
   )
 }
 
+export default HomePage;
+
 const styles = StyleSheet.create({
   main: {
     flex: 1,
@@ -70,4 +71,3 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Page;

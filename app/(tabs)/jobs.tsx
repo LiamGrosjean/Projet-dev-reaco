@@ -6,17 +6,20 @@ import Title from '@/app/components/title'
 import Colors from '@/constants/Colors'
 import Cats from '@/app/components/cats'
 import JobCard from '@/app/components/jobCard'
+import Header from '@/app/components/header'
 
 const page = () => {
   return (
     <View>
       <Stack.Screen
         options={{
-          header: () => <Search />,
+          header: () => <Header />,
         }}
-        />
-        <ScrollView showsVerticalScrollIndicator={false}>
-          <View style={styles.container}>
+      />
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <Search />
+      <View style={styles.container}>
+          <View>
             <View>
               <Title titre='Catégories' displayLink={true} />
               <Cats />
@@ -67,8 +70,9 @@ const page = () => {
               </View>
             </View>
           </View>
-        </ScrollView>
     </View>
+        </ScrollView>
+  </View>
   )
 }
 

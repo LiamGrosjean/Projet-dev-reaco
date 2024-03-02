@@ -51,23 +51,6 @@ export default function RootLayout() {
     if (error) throw error;
   }, [error]);
 
-  const tokenCache = {
-    async getToken(key: string) {
-      try {
-        return SecureStore.getItemAsync(key);
-      } catch (err) {
-        return null;
-      }
-    },
-    async saveToken(key: string, value: string): Promise<void> {
-      try {
-        await SecureStore.setItemAsync(key, value);
-      } catch (err) {
-        return null;
-      }
-    }
-  };
-
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
@@ -91,10 +74,10 @@ function RootLayoutNav() {
 
   useEffect(() => {
     if (isLoaded && !isSignedIn) {
-      router.push('/screens/login');
-    }
-    if (isLoaded && isSignedIn) {
-      router.push('/(tabs)/');
+          router.push('/screens/login');
+        }
+        if (isLoaded && isSignedIn) {
+          router.push('/(tabs)/');
     }
   }, [isLoaded]);
 
@@ -102,9 +85,9 @@ function RootLayoutNav() {
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen 
-        name="(modals)/menu" 
+        name="(modals)/jobApplied" 
         options={{ 
-          title: 'Menu',
+          title: 'jobApplied',
           headerTitleStyle: {
             fontSize: 16,
             fontWeight: '600',
@@ -116,7 +99,6 @@ function RootLayoutNav() {
               <FontAwesome name="angle-left" size={24} /> 
             </TouchableOpacity>
           ),
-          animation: 'slide_from_left',
           contentStyle: {
             backgroundColor: '#ffffff',
             padding: 16,

@@ -1,44 +1,69 @@
 import { View, Text, Button, StyleSheet } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 import React from 'react'
 import { useAuth } from '@clerk/clerk-react'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import Colors from '@/constants/Colors';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Stack } from 'expo-router';
+import Header from '@/app/components/header';
 
-const page = () => {
+const Profile = () => {
     const {signOut, isSignedIn} = useAuth()
   return (
-    <View style={styles.container}>
-      <Link href={'/screens/mesCandidatures'} style={styles.profileLink}>
-        <FontAwesome5 name='briefcase' size={16} color={Colors.light.primary} />
-        <Text style={{fontSize: 16,color: Colors.light.primary,}}>Mes candidatures</Text>
-      </Link>
-      <View>
-        { !isSignedIn && (
-        <Link href={'/screens/login'} style={{textAlign: 'center'}}>
-          <Text>Se connecter</Text>
-        </Link>
-        )}
-        <Button title='Se déconnecter' onPress={() => signOut()} />
+    <View style={styles.main}>
+      <View style={{paddingHorizontal: 33}}>
+        <Stack.Screen
+          options={{
+            header: () => <Header />,
+          }}
+        />
       </View>
-      
+      <View style={{gap: 10}}>
+        <Link href={'/screens/mesCandidatures'} style={styles.profileLink}>
+            <FontAwesome5 name='briefcase' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Mes candidatures</Text>
+        </Link>
+        <Link href={'/screens/mesLogements'} style={styles.profileLink}>
+            <FontAwesome5 name='building' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Mes Logements</Text>
+        </Link>
+        <View>
+        <Button title='Se connecter' onPress={() => router.push('/screens/login')} />
+        <Button title='Se déconnecter' onPress={() => signOut()} />
+        </View>
+      </View> 
     </View>
   )
 }
 
-export default page
+export default Profile
 
 const styles = StyleSheet.create({
-  container: {
+  main: {
     flex: 1,
     paddingHorizontal: 33,
     backgroundColor: Colors.light.background,
   },
   profileLink: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     padding: 14,
     borderWidth: 1,
     borderColor: Colors.light.primary,
     borderRadius: 5,
-  }
+    gap: 20,
+  },
+  buttonText: {
+    color: Colors.light.background,
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  buttonWrapper: {
+    backgroundColor: Colors.light.accent,
+    paddingVertical: 14,
+    marginHorizontal: 'auto',
+    alignItems: 'center',
+    borderRadius: 5,
+    marginTop: 41,
+  },
 })

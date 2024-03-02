@@ -1,7 +1,7 @@
-import { Modal, View, Text, StyleSheet, Pressable } from 'react-native';
+import { Modal, View, Text, } from 'react-native';
 import React, { useState } from 'react';
 
-const menu = () => {
+const jobApplied = () => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -13,4 +13,4 @@ const menu = () => {
 
 
 
-export default menu;
+export default jobApplied;
