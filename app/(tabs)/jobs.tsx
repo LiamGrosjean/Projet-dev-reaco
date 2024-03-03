@@ -8,7 +8,7 @@ import Cats from '@/app/components/cats'
 import JobCard from '@/app/components/jobCard'
 import Header from '@/app/components/header'
 
-const page = () => {
+const jobs = () => {
   return (
     <View>
       <Stack.Screen
@@ -91,4 +91,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default page
+export default jobs
