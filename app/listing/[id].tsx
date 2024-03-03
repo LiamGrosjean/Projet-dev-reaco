@@ -1,23 +1,62 @@
 import { View, Text, TouchableOpacity, GestureResponderEvent } from 'react-native'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
-import ButtonFill from '../components/buttonFill';
-
+import Map from '../components/map';
+import { useNavigation } from 'expo-router';
+import { NavigationContainer } from '@react-navigation/native';
+import AProposContent from '../components/AProposContent';
+import CompetencesContent from '../components/CompetencesContent';
+import DescriptionContent from '../components/DescriptionContent';
 
 const page = () => {
+  const navigation = useNavigation();
   const [selectedTab, setSelectedTab] = useState('Description');
+  const [content, setContent] = useState<ReactNode | null>(null);
+
   const handleTabPress = (tabName: React.SetStateAction<string>) => {
     setSelectedTab(tabName);
   };
+
+  const renderContent = () => {
+    switch (selectedTab) {
+      case 'Description':
+        return (
+          <View style={styles.DescriptionContainer}>
+            <DescriptionContent />
+          </View>
+        );
+      case 'Compétences':
+        return (
+          <View style={styles.CompetenceContainer}>
+            <CompetencesContent />
+          </View>
+        );
+      case 'A propos':
+        return (
+          <View style={styles.AproposContainer}>
+            <AProposContent />
+          </View>
+        );
+      case 'Carte':
+        return (
+          <View style={styles.MapContainer}>
+            <Map />
+          </View>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-
-
     <View style={styles.container}>
       <View style={styles.header}>
-      <TouchableOpacity >
-      <FontAwesome5 name='chevron-left' size={15} style={styles.left} lien="jobs" />
-    </TouchableOpacity>
+        <View style={styles.leftContainer}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <FontAwesome5 name='chevron-left' size={15} />
+          </TouchableOpacity>
+        </View>
 
         <Text style={styles.titre}>Détails Job</Text>
         <View style={styles.bookmarkContainer}>
@@ -29,7 +68,7 @@ const page = () => {
 
 
 
-      <View style={{ flexDirection: 'column', alignItems: 'center', marginTop: 27 }}>
+      <View style={{ flexDirection: 'column', alignItems: 'center', marginTop: 15 }}>
         <View style={styles.cercle}>
         </View>
 
@@ -56,7 +95,7 @@ const page = () => {
         </View>
 
         <View style={{ flexDirection: 'row', marginTop: 7, alignItems: 'center' }}>
-          <Text style={{ marginRight: 2, color: '#242C5D', fontSize: 20, marginBottom: 7 }}>€15</Text>
+          <Text style={{ marginRight: 2, color: '#242C5D', fontSize: 20, marginBottom: 7, fontWeight: '500'}}>€15</Text>
           <Text style={{ color: '#242C5D' }}>/Hr</Text>
         </View>
       </View>
@@ -77,15 +116,19 @@ const page = () => {
               <TouchableOpacity onPress={() => handleTabPress('Carte')}>
                 <Text style={[styles.infoBar, selectedTab === 'Carte' ? styles.selected : null]}>Carte</Text>
               </TouchableOpacity>
+   
+                  
             </View>
+
+          
           </View>
+          
+          <View >
+                {renderContent()}
+              </View>  
         </View>
-
       </View>
-
-    
     </View>
-
   );
 };
 
@@ -94,7 +137,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingTop: 8,
   },
   titre: {
     fontSize: 15,
@@ -113,7 +156,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
 
   },
-  left:{
+  left: {
     color: '#242C5D',
   },
   bookmarkContainer: {
@@ -157,17 +200,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 10,
     color: '#242C5D',
+    fontWeight: '600',
   },
   rectangle: {
-    width: 361,
-    height: 65,
+    width: 390,
+    height: 50,
     backgroundColor: '#F3F4FB',
     alignItems: "center",
     marginTop: 7
   },
   Bar: {
     width: 300,
-    height: 65,
+    height: 50,
     alignItems: "center",
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -182,5 +226,45 @@ const styles = StyleSheet.create({
     color: '#D83235',
   },
 
+  leftContainer: {
+    borderWidth: 2,
+    borderColor: '#ffffff',
+    backgroundColor: '#fffff',
+    borderRadius: 8,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  MapContainer: {
+    width: "80%",
+    height:   "70%",
+    marginTop:10,
+    marginLeft: "10%",
+    marginRight: "5%",
+  },
+  CompetenceContainer: { 
+  width: "80%",
+  height: "77%",
+  marginTop:3,
+  marginLeft: "10%",
+  marginRight: "5%",
+},
+  DescriptionContainer: {
+    width: "80%",
+    height: "77%",
+    marginTop:3,
+    marginLeft: "10%",
+    marginRight: "5%",
+  },
+  AproposContainer:{ 
+  width: "80%",
+  height: "77%",
+  marginTop:3,
+  marginLeft: "10%",
+  marginRight: "5%",
+},
+
 })
+
 export default page;
