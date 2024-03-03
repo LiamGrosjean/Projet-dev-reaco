@@ -16,7 +16,7 @@ const JobCard = ({ maxWidth, image, title='UX/UI Designer', company='UFR Ingemed
   };
 
   return (
-    <TouchableOpacity onPress={() => {router.push(jobLien as RelativePathString || '')}}>
+    <TouchableOpacity onPress={() => {router.push(jobLien as RelativePathString || '/')}}>
       <View style={[styles.container, { maxWidth }]}>
         <View style={styles.subContainer}>
           <View style={styles.brandContainer}>
