@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useRouter } from 'expo-router';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faBookmark } from '@fortawesome/free-solid-svg-icons/faBookmark';
 import { faBookmark as farBookmark } from '@fortawesome/free-regular-svg-icons/faBookmark';
 
-const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h', jobLien }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string, jobLien?: string }) => {
+const JobCard = ({ maxWidth, image, title='UX/UI Designer', company='UFR Ingemedia', description='Lorem ipsum dolor sit amet consectetur. Placerat pharetra sit', emplacement='Toulon', hSemaine='20H/sem', hSalaire='€15/h', jobLien }: { maxWidth?: number, title?: string, company?: string, description?: string, emplacement?: string, hSemaine?: string, hSalaire?: string, jobLien?: string, image?: string }) => {
   const router = useRouter();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
@@ -21,7 +21,9 @@ const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', de
         <View style={styles.subContainer}>
           <View style={styles.brandContainer}>
             <View style={styles.iconContainer}>
-              <View style={styles.iconCircle} />
+              <View style={styles.iconCircle}>
+                {image && <Image source={{ uri: image }} />}
+              </View>
             </View>
             <View style={styles.textContainer}>
               <Text style={styles.title}>{title}</Text>
@@ -45,7 +47,7 @@ const JobCard = ({ maxWidth, title='UX/UI Designer', company='UFR Ingemedia', de
           </View>
           <View style={styles.infoItem}>
               <FontAwesome5 name='money-bill' style={styles.infoIcon} />
-              <Text style={styles.infoText}> {hSalaire}/h €</Text>
+              <Text style={styles.infoText}> €{hSalaire}/h</Text>
           </View>
         </View>
       </View>

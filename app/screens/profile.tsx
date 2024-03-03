@@ -30,8 +30,24 @@ const Profile = () => {
             <FontAwesome5 name='building' size={16} color={Colors.light.primary} />
             <Text style={{fontSize: 16, color: Colors.light.primary}}>   Mes Logements</Text>
         </Link>
+        <Link href={'/screens/mesLogements'} style={styles.profileLink}>
+            <FontAwesome5 name='user' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Espace Candidat</Text>
+        </Link>
+        <Link href={'/screens/mesLogements'} style={styles.profileLink}>
+            <FontAwesome5 name='folder' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Espace Locataire</Text>
+        </Link>
+        <Link href={'/screens/mesLogements'} style={styles.profileLink}>
+            <FontAwesome5 name='bell' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Notifications</Text>
+        </Link>
+        <Link href={'/screens/mesLogements'} style={styles.profileLink}>
+            <FontAwesome5 name='cog' size={16} color={Colors.light.primary} />
+            <Text style={{fontSize: 16, color: Colors.light.primary}}>   Paramètres</Text>
+        </Link>
         <View>
-        <Button title='Se connecter' onPress={() => router.push('/screens/login')} />
+        <Button title='Se connecter' onPress={() => router.push('/screens/login')}/>
         <Button title='Se déconnecter' onPress={() => signOut()} />
         </View>
       </View> 

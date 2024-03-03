@@ -11,6 +11,7 @@ const getJobs = async () => {
             jobSalary
             jobHours
             companyName
+            id
             companyImage {
                 url
             }

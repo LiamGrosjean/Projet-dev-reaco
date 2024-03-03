@@ -39,12 +39,13 @@ const mesCandidatures = () => {
         renderItem={({ item }) => (
           <JobCard 
             title={item.titre} 
+            image={item.companyImage.url}
             company={item.companyName} 
             description={item.descriptionJob} 
             emplacement={item.jobLocation}
             hSemaine={item.jobHours}
             hSalaire={item.jobSalary}
-            jobLien='listing/133'
+            jobLien={item.id}
           />
         )}
       />
